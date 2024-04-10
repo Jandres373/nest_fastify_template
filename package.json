@@ -33,6 +33,7 @@
     "prepare": "husky",
     "lint": "eslint --ignore-path .gitignore . --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix",
+    "format": "npx prettier --write src/**/*.ts",
     "build:clean": "rimraf dist; exit 0"
   },
   "dependencies": {

@@ -14,8 +14,14 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
+  // ! ALERT
+  // TODO Cors enabled globally, check if necessary to keep.
+  app.enableCors({
+    origin: "*",
+  });
+
   const configService = app.get(ConfigService);
-  const port = configService.get<string>("PORT", "3000");
+  const port = configService.get<string>("PORT", "3001");
 
   await app.listen(port, "0.0.0.0");
 
